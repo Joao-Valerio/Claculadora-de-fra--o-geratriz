@@ -12,10 +12,10 @@ function calcularFracao() {
     let dizima = document.getElementById('dizima').value;
     const resultado = document.getElementById('resultado');
 
-    // Substituir vírgula por ponto
+
     dizima = dizima.replace(',', '.');
 
-    // Verificar se a entrada contém parênteses
+
     if (dizima.includes('(') && dizima.includes(')')) {
         dizima = dizima.replace(/\(([^)]+)\)/g, '.$1');
     }
@@ -51,7 +51,7 @@ function calcularFracao() {
 function identificarInicioPeriodo(decimal) {
     const length = decimal.length;
 
-    for (let i = 1; i <= length / 2; i++) { // Garantir que o período não seja maior que a metade da string
+    for (let i = 1; i <= length / 2; i++) {
         const periodo = decimal.substring(i, i + 1);
         const restante = decimal.substring(i + 1);
 
@@ -87,8 +87,8 @@ function calcularMDC(a, b) {
     return a;
 }
 
-// Habilitar Enter para calcular a fração
-document.getElementById('dizima').addEventListener('keydown', function(event) {
+
+document.getElementById('dizima').addEventListener('keydown', function (event) {
     if (event.key === 'Enter') {
         calcularFracao();
     }
